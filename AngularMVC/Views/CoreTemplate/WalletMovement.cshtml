@@ -1,0 +1,102 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h1>
+        WALLET MOVEMENT STEPS
+    </h1>
+    <ol>
+        <li>Insert data to L_Services</li>
+        <li>Check first L_ServiceProvider in PRODUCTION, insert IDENTITY off in L_ServiceProvider (include id-PK)</li>
+        <li>Check first L_TransactionType in PRODUCTION, insert IDENTITY off in L_TransactionType (include id-PK)</li>
+        <li>
+            Insert D_Wallets <strong>(NOTE: General only or COMMON Wallets created)</strong>
+            <ul>
+                <li>Main Wallet</li>
+                <li>Fee Wallet</li>
+                <li>Commission Wallet</li>
+                <li>EWT Wallet (Tax)</li>
+                <li>optional: VAT Wallet if not just use the standard wallet id of VAT</li>
+            </ul>
+        </li>
+        <li>
+            Insert D_walletGroup (NOTE: SELECT the <strong>Main WALLET</strong>)
+        </li>
+        <li>
+            <strong>NOTE</strong> this is only for creation of table for the SCHEME
+            <br />
+            Creation of Scheme table or if fee/commission is same with other general transaction use this table L_FeeCommissionScheme
+        </li>
+        <li>
+            <strong>OPTIONAL</strong> if you need to create new RULE TYPE (L_RuleType)
+        </li>
+        <li>
+            <strong>OPTIONAL</strong> if you have created a new FEE COMMISSION SCHEME table you need to include it into L_LookupReferences
+            <br />
+            Check first L_LookupReferences in PRODUCTION, insert IDENTITY off in L_LookupReferences (include id-PK)
+        </li>
+        <li>
+            Insert into D_Rule <strong>(NOTE: General only or COMMON Rule created)</strong>
+            <br />
+            <strong>NOTE</strong> be aware of the wallet created on your walletid
+            <br />
+            <strong>OPTIONAL</strong> if you have a lookupreference for you FEE COMMISSION SCHEME table, please include it here
+            <ul>
+                <li>FEE</li>
+                <li>COMMISSION</li>
+                <li>VAT</li>
+            </ul>
+        </li>
+        <li>
+            INSERT THE VALUES for your SCHEME Fee table values
+            <br />
+            <ul>
+                <li><strong>NOTE</strong> be aware of the TRANSACTION-TYPEID of INITIATE</li>
+                <li><strong>NOTE</strong> be aware of the TRANSACTION-TYPEID of COMPLETE</li>
+                <li><strong>NOTE</strong> be aware of the RULEID of FEE</li>
+                <li><strong>NOTE</strong> be aware of the RULEID of COMMISSION</li>
+            </ul>
+        </li>
+        <li>
+            Insert data to D_GroupRule <strong>(NOTE: General only or COMMON Rule created)</strong>
+            <ul>
+                <li>FEE</li>
+                <li>COMMISSION</li>
+                <li>VAT</li>
+            </ul>
+        </li>
+        <li>
+            <strong>OPTIONAL:</strong> if you have a new group you should include here also the ruleid/capsetid of ruletype CAPSET
+        </li>
+        <li>
+            Insert data to D_RuleTransactionType <strong>(NOTE: General only or COMMON Rule created)</strong>
+            <ul>
+                <li>FEE (Initiate-TransactionTypeId, Complete-TransactionTypeId)</li>
+                <li>COMMISSION (Initiate-TransactionTypeId, Complete-TransactionTypeId)</li>
+                <li>VAT (Initiate-TransactionTypeId, Complete-TransactionTypeId)</li>
+                <li>CAPSET (Initiate-TransactionTypeId, Complete-TransactionTypeId)</li>
+            </ul>
+        </li>
+        <li>
+            Insert data to D_RuleTransactionGroup <strong>(NOTE: General only or COMMON Rule created)</strong>
+            <ul>
+                <li>FEE</li>
+                <li>COMMISSION</li>
+                <li>VAT</li>
+            </ul>
+        </li>
+        <li>
+            <strong>OPTIONAL:</strong> if you have a new group you should include here also the ruleid/capsetid of ruletype CAPSET
+        </li>
+        <li>
+            This may adjust IMPORTANTLY when WALLET MOVEMENT
+            <ul>
+                <li>InitialTransactionValidation</li>
+                <li>usp_ProcessTransactional</li>
+                <li>usp_ProcessCommissionFee</li>
+                <li>usp_ProcessCapsetLimit</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+

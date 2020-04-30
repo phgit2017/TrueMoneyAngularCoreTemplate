@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularMVC", "AngularMVC\AngularMVC.csproj", "{C9913731-BE23-4A07-AB8A-AABBC3D1C3C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Core-DataAccess", "01 Core-DataAccess", "{0A1A563E-9908-4973-B66C-01F0113A4949}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Database.CoreTemplate", "DataAccess.Database.TRUEMONEY\DataAccess.Database.CoreTemplate.csproj", "{99764F72-AC6B-422A-8924-160A9568C111}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Entities.Context", "DataAccess.Entities.Context\DataAccess.Entities.Context.csproj", "{6A880D28-150B-4B67-B762-6669D377C88D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Repository.CoreTemplate", "DataAccess.Repository.TrueMoney\DataAccess.Repository.CoreTemplate.csproj", "{E5BEAF92-34F9-47DC-A923-B271B114C624}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Business-Implementation", "02 Business-Implementation", "{B55D46E9-DC8E-4555-970E-D9541B7C36B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business.TrueMoney.Core", "Business.TrueMoney.Core\Business.TrueMoney.Core.csproj", "{DB8AB50C-A6F3-4958-ACD0-BB9184A6F09E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9913731-BE23-4A07-AB8A-AABBC3D1C3C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9913731-BE23-4A07-AB8A-AABBC3D1C3C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9913731-BE23-4A07-AB8A-AABBC3D1C3C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9913731-BE23-4A07-AB8A-AABBC3D1C3C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99764F72-AC6B-422A-8924-160A9568C111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99764F72-AC6B-422A-8924-160A9568C111}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99764F72-AC6B-422A-8924-160A9568C111}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99764F72-AC6B-422A-8924-160A9568C111}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A880D28-150B-4B67-B762-6669D377C88D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A880D28-150B-4B67-B762-6669D377C88D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A880D28-150B-4B67-B762-6669D377C88D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A880D28-150B-4B67-B762-6669D377C88D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5BEAF92-34F9-47DC-A923-B271B114C624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5BEAF92-34F9-47DC-A923-B271B114C624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5BEAF92-34F9-47DC-A923-B271B114C624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5BEAF92-34F9-47DC-A923-B271B114C624}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB8AB50C-A6F3-4958-ACD0-BB9184A6F09E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB8AB50C-A6F3-4958-ACD0-BB9184A6F09E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB8AB50C-A6F3-4958-ACD0-BB9184A6F09E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB8AB50C-A6F3-4958-ACD0-BB9184A6F09E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{99764F72-AC6B-422A-8924-160A9568C111} = {0A1A563E-9908-4973-B66C-01F0113A4949}
+		{6A880D28-150B-4B67-B762-6669D377C88D} = {0A1A563E-9908-4973-B66C-01F0113A4949}
+		{E5BEAF92-34F9-47DC-A923-B271B114C624} = {0A1A563E-9908-4973-B66C-01F0113A4949}
+		{DB8AB50C-A6F3-4958-ACD0-BB9184A6F09E} = {B55D46E9-DC8E-4555-970E-D9541B7C36B8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC3D9816-B1FD-4FCC-BB3E-93CA82B46587}
+	EndGlobalSection
+EndGlobal

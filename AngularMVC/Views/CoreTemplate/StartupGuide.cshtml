@@ -1,0 +1,63 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h1>
+        Setting up CORE-TRUEMONEY (Backend)
+    </h1>
+    <ol>
+        <li>
+            Download and install Source tree
+            <ul>
+                <li>
+                    Link: <a href="https://www.sourcetreeapp.com/" target="_blank">Source-tree</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            Open Source tree
+            <ul>
+                <li>Clone URL : https://bitbucket.org/ascendcorp/ami-ph-server/src/master/ </li>
+                <li>Browse to your local disk</li>
+                <li>Put a Name to your local repository</li>
+                <li>Create a folder for dumping the files</li>
+                <li>Start Clone</li>
+            </ul>
+        </li>
+        <li>
+            Once Cloned
+            <ul>
+                <li>
+                    Click branch
+                    <br />
+                    <img src="~/ImageResources/pasted image 0.png" />
+                </li>
+                <li>Name your certain branch</li>
+            </ul>
+        </li>
+        <li>
+            Fix Library DLL
+            <ul>
+                <li>Open Visual Studio</li>
+                <li>
+                    Clean solution
+                    <br />
+                    <img src="~/ImageResources/pasted image 0 (1).png" />
+                </li>
+                <li>
+                    Rebuild solution
+                </li>
+                <li>
+                    Download and save the fixes for the DLL: <a href="https://drive.google.com/file/d/11fUgACdckkDY3b_qSXvxIJiY5spBvQqS/view" target="_blank">Resolve-dll</a>
+                </li>
+                <li>
+                    Once extract copy the ASCEND_AppLayer to replace the ASCEND_AppLayer of your cloned local repository.
+                </li>
+                <li>
+                    Rebuild all solution should have a message of Rebuild all success.
+                </li>
+            </ul>
+        </li>
+    </ol>
+</div>
+

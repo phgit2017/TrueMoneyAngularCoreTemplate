@@ -1,0 +1,92 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-controller="serverguidesController" ng-init="GetServerGuides();GetServerTypes();">
+    <h1>
+        Servers
+    </h1>
+    <input type="text" name="txtSearch" value="" ng-model="searchserverguidestxt" />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Server</th>
+                <th>Server-type</th>
+                <th>Remote-link</th>
+                <th>Remote-link-db</th>
+                <th>Remote-username-password</th>
+                <th>DHC-Postman-link</th>
+                <th>URL-link</th>
+            </tr>
+        </thead>
+        <tbody>
+            @*<tr ng-repeat="item in serverguides | filter: searchserverguidestxt">*@
+            <tr dir-paginate="item in serverguides | itemsPerPage:5 | filter: searchserverguidestxt">
+                <th>
+                    <span ng-bind="item.ServerId" ng-show="false"></span>
+                    <span ng-bind="item.CreatedBy" ng-show="false"></span>
+                    <span ng-bind="item.CreatedTime" ng-show="false"></span>
+                    <a href="#" ng-click="ModifyServerGuides(item);">update</a>
+                </th>
+                <td>
+                    <span ng-bind="item.ServerTypeName"></span>
+                </td>
+                <td>
+                    <span ng-bind="item.ServerName"></span>
+                </td>
+                <td><span ng-bind="item.RemoteLink"></span></td>
+                <td>
+                    <span ng-bind="item.RemoteLinkDB"></span>
+                </td>
+                <td>
+                    <span ng-bind="item.RemoteUserCredentials"></span>
+                </td>
+                <td>
+                    <span ng-bind="item.DHCRemoteLink"></span>
+                </td>
+                <td>
+                    <span ng-bind="item.URLLink"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <dir-pagination-controls max-size="10" direction-links="true" boundary-links="true"></dir-pagination-controls>
+
+
+
+    <h5>Create</h5>
+    <form class="form-horizontal" id="frmcreate">
+        Server Type Name :
+        <select ng-model="frmCreateData.item" ng-options="item as item.ServerTypeName for item in servertypes"></select>
+        Server Name : <input type="text" value="" ng-model="frmCreateData.ServerName" />
+        Remote Link: <input type="text" value="" ng-model="frmCreateData.RemoteLink" />
+        Remote Link DB: <input type="text" value="" ng-model="frmCreateData.RemoteLinkDB" />
+        Remote User Credentials: <input type="text" value="" ng-model="frmCreateData.RemoteUserCredentials" />
+        DHC Remote Link: <input type="text" value="" ng-model="frmCreateData.DHCRemoteLink" />
+        URL Link: <input type="text" value="" ng-model="frmCreateData.URLLink" />
+        <button class="btn btn-primary" ng-click="CreateServerGuides();">Submit</button>
+    </form>
+
+    <h5>Update</h5>
+    <form class="form-horizontal" id="frmupdate">
+        Server Type Name :
+        @*<select  ng-options="item as item.ServerTypeName for item in servertypes"></select>*@
+        <input type="hidden" ng-model="ModifyData.ServerId" />
+        Server Name : <input type="text" value="" ng-model="ModifyData.ServerName" />
+        Remote Link: <input type="text" value="" ng-model="ModifyData.RemoteLink" />
+        Remote Link DB: <input type="text" value="" ng-model="ModifyData.RemoteLinkDB" />
+        Remote User Credentials: <input type="text" value="" ng-model="ModifyData.RemoteUserCredentials" />
+        DHC Remote Link: <input type="text" value="" ng-model="ModifyData.DHCRemoteLink"  />
+        URL Link: <input type="text" value="" ng-model="ModifyData.URLLink"  />
+        <button class="btn btn-primary" ng-click="UpdateServerGuides();">Submit</button>
+    </form>
+
+</div>
+
+@section scripts {
+    <script type="text/javascript"></script>
+    <script src="~/Scripts/core-template/server-guides.js"></script>
+    <script src="~/Scripts/core-template/server-guides-services.js"></script>
+}
